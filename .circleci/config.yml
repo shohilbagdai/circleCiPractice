@@ -6,10 +6,7 @@ jobs:
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
-        environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: circle_test
-
+      
     steps:
 
       - checkout
