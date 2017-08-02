@@ -6,8 +6,3 @@ jobs:
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
-      
-    steps:
-      - run: |
-          mkdir -p $CIRCLE_TEST_REPORTS/cucumber
-          bundle exec cucumber --format pretty --format json --out $CIRCLE_TEST_REPORTS/cucumber/tests.cucumber
