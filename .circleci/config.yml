@@ -9,7 +9,7 @@ jobs:
       
     steps:
       - checkout
-      - run: mvn clean test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
+      - run: mvn clean test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
       - run: |
           mkdir -p $CIRCLE_TEST_REPORTS/cucumber
           bundle exec cucumber --format pretty --format json --out $CIRCLE_TEST_REPORTS/cucumber/tests.cucumber
