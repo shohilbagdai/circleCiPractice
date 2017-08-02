@@ -22,7 +22,3 @@ jobs:
         path: target/surefire-reports
     - store_artifacts: null
 path: target/circlecipractice-0.0.1-SNAPSHOT.jar
-test:
-  override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/cucumber
-    - bundle exec cucumber --format pretty --format json --out $CIRCLE_TEST_REPORTS/cucumber/tests.cucumber
