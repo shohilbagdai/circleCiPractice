@@ -61,11 +61,10 @@ public final class WebDriverFactory {
 
             if (browser.equalsIgnoreCase("chrome")) {
 
-
+                System.setProperty("webdriver.chrome.driver", "C:/Users/shohil.bagdai/GitHub/circlecipractice/resource/chromedriver.exe");
                 Browser chrome = new ChromeBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, chrome.getCapabilities());
-
 
             } else if (browser.equalsIgnoreCase("firefox")) {
 
@@ -121,12 +120,13 @@ public final class WebDriverFactory {
 
     /**
      * Shuts down the WebDriver.
-     * @throws InterruptedException 
+     * 
+     * @throws InterruptedException
      */
     public static void quitWebDriver() {
 
         if (webDriver != null) {
-     
+
             webDriver.quit();
 
         }
