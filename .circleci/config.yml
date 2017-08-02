@@ -15,12 +15,14 @@ jobs:
       - checkout
 
       - restore_cache:
+          key: circlecipractice-{{ checksum "pom.xml" }}
       
       - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
+          key: circlecipractice-{{ checksum "pom.xml" }}
       
       - run: mvn package
       
