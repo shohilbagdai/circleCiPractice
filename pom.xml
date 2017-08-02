@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.statravel.autoqa</groupId>
-	<artifactId>admin</artifactId>
+	<artifactId>circilci</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>qa-sta-admin</name>
+	<name>qa-sta-circleci</name>
 	<url>http://maven.apache.org</url>
 
 
@@ -26,9 +26,9 @@
 		<!-- Versions -->
 		<java.version>1.8</java.version>
 		<cobertura.maven.plugin.version>2.7</cobertura.maven.plugin.version>
-		<selenium.version>2.53.1</selenium.version>
+		<selenium.version>3.3.1</selenium.version>
 		<cucumber.version>1.2.4</cucumber.version>
-		<seleneum.java.version>3.0.1</seleneum.java.version>
+		<seleneum.java.version>3.3.1</seleneum.java.version>
 
 	</properties>
 
