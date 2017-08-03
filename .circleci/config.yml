@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/circlecipractice
+    docker:
+    - image: circleci/openjdk:8-jdk-browsers
+    - image: selenium/standalone-chrome:3.1.0
+    steps:
+    - checkout
+    - restore_cache:
+        key: circlecipractice-{{ checksum "pom.xml" }}
+    - run: mvn clean test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
+    - save_cache:
+        paths:
+        - ~/.m2
+        key: circlecipractice-{{ checksum "pom.xml" }}
+    - run: mvn package
+    - store_test_results:
+        path: target/surefire-reports
+    - store_artifacts:
+        path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
