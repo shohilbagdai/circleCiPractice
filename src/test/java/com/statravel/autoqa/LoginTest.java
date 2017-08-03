@@ -29,6 +29,7 @@ public class LoginTest {
     public void loadLoginPage() {
         WebDriverFactory.getWebDriver()
                         .get("https://www.google.co.uk/");
+        System.out.println("Entering url");
 
     }
 
@@ -37,7 +38,7 @@ public class LoginTest {
      */
     @When("^I log in$")
     public void logIn() {
-
+        System.out.println("log in");
     }
 
     /**
@@ -45,7 +46,7 @@ public class LoginTest {
      */
     @Then("^I should be redirected to the home page$")
     public void redirectToHomePage() {
-
+        System.out.println("redirect to homepage");
     }
 
 }
