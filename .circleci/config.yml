@@ -6,7 +6,5 @@ jobs:
     - image: selenium/standalone-chrome:3.1.0
     - image: circleci/openjdk:8-jdk-browsers
     steps:
-    - run:
-          name: Run Automation
-          command: mvn clean test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
+    - run: mvn clean test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
     
