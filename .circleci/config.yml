@@ -8,5 +8,5 @@ jobs:
     steps:
     - run:
         name: Run Automation
- #       command: test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
+        command: test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
         
