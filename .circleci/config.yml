@@ -7,6 +7,5 @@ jobs:
     - image: circleci/openjdk:8-jdk-browsers
     steps:
     - run:
-        name: Run Automation
         command: test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
         
