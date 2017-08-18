@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/circlecipractice
+    docker:
+    - image: selenium/standalone-chrome:3.1.0
+    - image: circleci/openjdk:8-jdk-browsers
+    
