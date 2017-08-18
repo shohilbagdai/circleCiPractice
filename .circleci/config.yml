@@ -8,8 +8,5 @@ jobs:
     steps:
     - run:
         name: Run Automation
-        command: test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
-        test:
-  override:
-    - mkdir -p $CIRCLE_TEST_REPORTS/cucumber
-    - bundle exec cucumber --format junit --out $CIRCLE_TEST_REPORTS/cucumber/junit.xml
+ #       command: test -DargLine="-Dspring.profiles.active=local" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
+        
