@@ -1,5 +1,7 @@
 package com.statravel.autoqa;
 
+import java.net.MalformedURLException;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -18,9 +20,10 @@ public class Hooks {
 
     /**
      * Before each feature scenario starts the WebDriver.
+     * @throws MalformedURLException 
      */
     @Before(order = 1)
-    public void start() {
+    public void start() throws MalformedURLException {
 
         WebDriverFactory.initWebDriver();
 

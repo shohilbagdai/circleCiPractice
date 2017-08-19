@@ -18,7 +18,7 @@ public class FireFoxBrowser extends Browser {
 
         capabilities = DesiredCapabilities.firefox();
         capabilities.setPlatform(Platform.WINDOWS);
-        capabilities.setVersion("47");
+//        capabilities.setVersion("52");
         capabilities.setJavascriptEnabled(true);
         capabilities.setCapability("acceptSslCerts", true);
         capabilities.setCapability("rotatable", false);

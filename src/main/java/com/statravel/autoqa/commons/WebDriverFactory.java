@@ -40,34 +40,35 @@ public final class WebDriverFactory {
     /**
      * 
      * @return WebDriver instance
+     * @throws MalformedURLException
      */
-    public static WebDriver initWebDriver() {
+    public static WebDriver initWebDriver() throws MalformedURLException {
 
         String browser = System.getProperty("browser");
 
         URL seleniumHostURL = null;
 
-        try {
-
-            seleniumHostURL = new URL(SeleniumProperties.getHost());
-
-        } catch (MalformedURLException mue) {
-
-            LOGGER.error("Could not connect to Remote Webdrive", mue);
-
-        }
+        // try {
+        //
+        // seleniumHostURL = new URL(SeleniumProperties.getHost());
+        //
+        // } catch (MalformedURLException mue) {
+        //
+        // LOGGER.error("Could not connect to Remote Webdrive", mue);
+        //
+        // }
 
         if (webDriver == null || !isSessionActive()) {
 
             if (browser.equalsIgnoreCase("chrome")) {
 
-                System.setProperty("webdriver.chrome.driver", "C:/Users/shohil.bagdai/GitHub/circlecipractice/resource/chromedriver.exe");
+                seleniumHostURL = new URL("http://192.168.99.100:32772/wd/hub");
                 Browser chrome = new ChromeBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, chrome.getCapabilities());
 
             } else if (browser.equalsIgnoreCase("firefox")) {
-
+                seleniumHostURL = new URL("http://192.168.99.100:32773/wd/hub");
                 Browser firefox = new FireFoxBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, firefox.getCapabilities());
