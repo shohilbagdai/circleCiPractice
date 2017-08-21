@@ -7,5 +7,5 @@ jobs:
     - image: circleci/openjdk:8-jdk-browsers
   steps:
     - run:
-    - command: mvn test -Dcucumber.options="--tags @Login" -Dspring.profiles.active=ci -Dbrowser=chrome 
+     command: mvn test -Dcucumber.options="--tags @Login" -Dspring.profiles.active=ci -Dbrowser=chrome  
    
