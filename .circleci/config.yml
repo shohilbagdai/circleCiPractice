@@ -6,4 +6,5 @@ jobs:
     - image: selenium/standalone-chrome:3.1.0
     - image: circleci/openjdk:8-jdk-browsers
     steps:
+    - run :
     - test: -Dcucumber.options:"--tags @Login" -Dbrowser:chrome
