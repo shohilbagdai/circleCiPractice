@@ -33,7 +33,7 @@ public class Hooks {
      * After each feature scenario shuts down the WebDriver.
      * 
      * @param scenario
-     *            scenario
+     *             scenario
      */
     @After
     public void closeBrowser(final Scenario scenario) {
