@@ -41,10 +41,11 @@ public final class WebDriverFactory {
      * 
      * @return WebDriver instance
      * @throws MalformedURLException
+     *             MalformedURLException
      */
     public static WebDriver initWebDriver() throws MalformedURLException {
 
-//        String browser = System.getProperty("browser");
+        // String browser = System.getProperty("browser");
         String browser = "chrome";
         URL seleniumHostURL = null;
 
