@@ -41,7 +41,7 @@ public final class WebDriverFactory {
      * 
      * @return WebDriver instance
      * @throws MalformedURLException
-     *             MalformedURLException
+     * 
      */
     public static WebDriver initWebDriver() throws MalformedURLException {
 
@@ -63,13 +63,13 @@ public final class WebDriverFactory {
 
             if (browser.equalsIgnoreCase("chrome")) {
 
-                seleniumHostURL = new URL("http://127.0.0.1:4444/wd/hub");
+                seleniumHostURL = new URL("http://192.168.99.100:32772/wd/hub");
                 Browser chrome = new ChromeBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, chrome.getCapabilities());
 
             } else if (browser.equalsIgnoreCase("firefox")) {
-                seleniumHostURL = new URL("http://127.0.0.1:4444/wd/hub");
+                seleniumHostURL = new URL("http://192.168.99.100:32773/wd/hub");
                 Browser firefox = new FireFoxBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, firefox.getCapabilities());
