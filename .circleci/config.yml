@@ -6,5 +6,6 @@ jobs:
     - image: selenium/standalone-chrome:3.1.0
     - image: circleci/openjdk:8-jdk-browsers
   steps:
-    - test: mvn test -Dcucumber.options="--tags @Login" -Dspring.profiles.active=ci -Dbrowser=chrome 
+    - run:
+    - command: mvn test -Dcucumber.options="--tags @Login" -Dspring.profiles.active=ci -Dbrowser=chrome 
    
