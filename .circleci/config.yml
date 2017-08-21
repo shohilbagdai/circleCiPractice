@@ -5,5 +5,7 @@ jobs:
     docker:
     - image: selenium/standalone-chrome:3.1.0
     - image: circleci/openjdk:8-jdk-browsers
+    - image: null
     steps:
-    - command: mvn test -Dcucumber.options="--tags @Login" -Dspring.profiles.active=ci -Dbrowser=chrome
+    - run: mvn
+    -run: test -Dcucumber.options="--tags @Login" -Dspring.profiles.active=ci -Dbrowser=chrome
