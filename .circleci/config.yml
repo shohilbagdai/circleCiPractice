@@ -4,30 +4,36 @@
 #
 
 defaults: &defaults
-  working_directory: ~/saved-searches-service
-  docker:
-    - image: circleci/openjdk:8-jdk
-    - image: selenium/standalone-chrome:3.1.0
-    
+  working_directory: ~/automation-qa
+
 version: 2
 jobs:
-  build:
-  
+  automation_chrome:
+
     <<: *defaults
+
+    docker:
+      - image: circleci/openjdk:8-jdk
+      - image: selenium/standalone-chrome
 
     steps:
       - checkout
-      - setup_remote_docker
-
-
-      - run:
-          name: List docker images
-          command: docker images
-
-      - run:
-          name: List docker processes
-          command: docker ps
 
       - run:
           name: Automation tests
           command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
+
+  automation_firefox:
+
+    <<: *defaults
+
+    docker:
+      - image: circleci/openjdk:8-jdk
+      - image: selenium/standalone-firefox
+
+    steps:
+      - checkout
+
+      - run:
+          name: Automation tests
+          command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=firefox

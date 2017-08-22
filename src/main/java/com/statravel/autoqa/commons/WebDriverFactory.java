@@ -69,7 +69,7 @@ public final class WebDriverFactory {
                 webDriver = new RemoteWebDriver(seleniumHostURL, chrome.getCapabilities());
 
             } else if (browser.equalsIgnoreCase("firefox")) {
-                seleniumHostURL = new URL("http://192.168.99.100:32773/wd/hub");
+                seleniumHostURL = new URL("http://127.0.0.1:4444/wd/hub");
                 Browser firefox = new FireFoxBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, firefox.getCapabilities());
