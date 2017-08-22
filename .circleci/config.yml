@@ -6,7 +6,6 @@
 defaults: &defaults
   working_directory: ~/saved-searches-service
   docker:
-    - image: selenium/standalone-chrome:3.1.0
     - image: circleci/openjdk:8-jdk
     
 version: 2
