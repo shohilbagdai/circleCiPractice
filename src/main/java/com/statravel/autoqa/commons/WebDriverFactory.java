@@ -63,7 +63,7 @@ public final class WebDriverFactory {
 
             if (browser.equalsIgnoreCase("chrome")) {
 
-                seleniumHostURL = new URL("http://192.168.99.100:32772/wd/hub");
+                seleniumHostURL = new URL("http://127.0.0.1:4444/wd/hub");
                 Browser chrome = new ChromeBrowser();
 
                 webDriver = new RemoteWebDriver(seleniumHostURL, chrome.getCapabilities());

@@ -21,7 +21,10 @@ jobs:
 
       - run:
           name: Start Selenium
-          command: docker run selenium/standalone-chrome:3.1.0
+          command: |
+		    docker run -d -p 4444:4444 selenium/standalone-chrome:3.1.0
+			sleep 45
+		  
 
       - run:
           name: Automation tests
