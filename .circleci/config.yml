@@ -7,6 +7,7 @@ defaults: &defaults
   working_directory: ~/saved-searches-service
   docker:
     - image: circleci/openjdk:8-jdk
+    - image: selenium/standalone-chrome:3.1.0
     
 version: 2
 jobs:
@@ -20,11 +21,13 @@ jobs:
 
 
       - run:
-          name: Start Selenium
-          command: |
-            docker run -d -p 4444:4444 selenium/standalone-chrome:3.1.0
-            sleep 45
+          name: List docker images
+          command: docker images
 
+      - run:
+          name: List docker processes
+          command: docker ps
+		  
       - run:
           name: Automation tests
           command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
