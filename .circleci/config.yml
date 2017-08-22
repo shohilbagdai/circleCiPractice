@@ -22,8 +22,8 @@ jobs:
       - run:
           name: Start Selenium
           command: |
-		    docker run -d -p 4444:4444 selenium/standalone-chrome:3.1.0
-			sleep 45
+            docker run -d -p 4444:4444 selenium/standalone-chrome:3.1.0
+            sleep 45
 		  
 
       - run:
