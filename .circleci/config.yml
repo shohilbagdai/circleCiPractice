@@ -27,7 +27,7 @@ jobs:
       - run:
           name: List docker processes
           command: docker ps
-		  
+
       - run:
           name: Automation tests
           command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
