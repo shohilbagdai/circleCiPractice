@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Start Selenium
           command: docker run selenium/standalone-chrome:3.1.0
-		  
+
       - run:
           name: Automation tests
           command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
