@@ -45,8 +45,8 @@ public final class WebDriverFactory {
      */
     public static WebDriver initWebDriver() throws MalformedURLException {
 
-        // String browser = System.getProperty("browser");
-        String browser = "chrome";
+        String browser = System.getProperty("browser");
+        // String browser = "chrome";
         URL seleniumHostURL = null;
 
         // try {
