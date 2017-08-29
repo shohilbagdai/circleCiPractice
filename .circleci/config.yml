@@ -44,8 +44,7 @@ workflows:
     jobs:
       - automation_chrome:
         filters:
-          branches:
-            only: master
+          branches: - only: master
       - automation_firefox:
         filters:
           branches:
