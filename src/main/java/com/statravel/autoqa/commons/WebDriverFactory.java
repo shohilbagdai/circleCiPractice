@@ -85,9 +85,9 @@ public final class WebDriverFactory {
 
         webDriver.get(SeleniumProperties.getAppURL());
 
-        webDriver.manage()
-                 .window()
-                 .maximize();
+//        webDriver.manage()
+//                 .window()
+//                 .maximize();
 
         return webDriver;
 
