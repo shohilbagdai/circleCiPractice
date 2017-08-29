@@ -47,9 +47,9 @@ workflows:
   build_accept_deploy:
     jobs:
       - build:
-        filters:
-          branches:
-            only: Tese
+#        filters:
+#          branches:
+#            only: Tese
       - automation_chrome:
         requires:
           - build
