@@ -49,7 +49,7 @@ workflows:
       - build:
         filters:
           branches:
-            only:master
+            only:Tese
       - automation_chrome:
         requires:
           - build
