@@ -43,4 +43,10 @@ workflows:
   build_accept_deploy:
     jobs:
       - automation_chrome
+      filters:
+        branches:
+          only: master
       - automation_firefox
+      filters:
+        branches:
+          only: master
