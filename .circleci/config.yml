@@ -45,5 +45,11 @@ workflows:
 #        filters:
 #          branches:
 #            only: Tese
-      - automation_chrome
-      - automation_firefox
+      - automation_chrome:
+        filters:
+          branches:
+            only: master
+      - automation_firefox:
+        filters:
+          branches:
+            only: master
