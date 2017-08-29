@@ -42,5 +42,11 @@ workflows:
   version: 2
   build_accept_deploy:
     jobs:
-      - automation_chrome
-      - automation_firefox
+      - automation_chrome:
+        filters:
+          branches:
+            only: master
+      - automation_firefox:
+        filters:
+          branches:
+            only: master
