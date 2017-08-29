@@ -11,7 +11,11 @@ jobs:
   build: 
     
     <<: *defaults
-    
+     
+  automation_chrome:
+
+    <<: *defaults
+
     docker:
       - image: circleci/openjdk:8-jdk
       - image: selenium/standalone-chrome
@@ -22,21 +26,6 @@ jobs:
       - run:
           name: Automation tests
           command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
-  
-#  automation_chrome:
-#
-#    <<: *defaults
-#
-#    docker:
-#      - image: circleci/openjdk:8-jdk
-#      - image: selenium/standalone-chrome
-#
-#    steps:
-#      - checkout
-#
-#      - run:
-#          name: Automation tests
-#          command: mvn test -DargLine="-Dspring.profiles.active=ci" -Dcucumber.options="--tags @Smoke" -Dbrowser=chrome
 
   automation_firefox:
 
@@ -60,10 +49,10 @@ workflows:
       - build:
         filters:
           branches:
-            only:Tese
-#      - automation_chrome:
-#        requires:
-#          - build
+            only: Tese
+      - automation_chrome:
+        requires:
+          - build
       - automation_firefox:
         requires:
           - build
