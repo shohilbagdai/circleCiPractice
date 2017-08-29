@@ -7,11 +7,7 @@ defaults: &defaults
   working_directory: ~/automation-qa
 
 version: 2
-jobs:
-  build: 
-    
-    <<: *defaults
-     
+jobs:    
   automation_chrome:
 
     <<: *defaults
@@ -46,13 +42,8 @@ workflows:
   version: 2
   build_accept_deploy:
     jobs:
-      - build:
 #        filters:
 #          branches:
 #            only: Tese
-      - automation_chrome:
-        requires:
-          - build
-      - automation_firefox:
-        requires:
-          - build
+      - automation_chrome
+      - automation_firefox
